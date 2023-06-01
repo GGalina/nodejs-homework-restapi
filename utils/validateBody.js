@@ -26,9 +26,21 @@ const validateFavBody = schema => {
     return func;
 };
 
+const validateSubscription = schema => {
+    const func = (req, res, next) => {
+        if (Object.keys(req.body).length === 0) {
+            next(HttpError(400, `Missing field subscription`));
+        } else {
+            next();
+        }
+    };
+    return func;
+};
+
 const validate = {
     validateBody,
-    validateFavBody
+    validateFavBody,
+    validateSubscription
 };
 
 module.exports = validate;
