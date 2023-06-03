@@ -16,13 +16,17 @@ const contactSchema = new Schema({
   favorite: {
     type: Boolean,
     default: false,
-  },  
+  },
+  owner: {
+    type: Schema.Types.ObjectId,
+    ref: 'user',
+  },
 }, { versionKey: false, timestamps: true });
 
 const contactJoiSchema = Joi.object({
   name: Joi.string().required().label('name'),
   email: Joi.string().email().required().label('email'),
-  phone: Joi.string().trim().pattern(/^\d{10}$/).required().label('phone'),
+  phone: Joi.string().trim().required().label('phone'),
   favorite: Joi.boolean(),
 });
 

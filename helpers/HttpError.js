@@ -1,5 +1,9 @@
 const messages = {
-    404: "Not Found"
+    400: "Bad Request",
+    401: "Unauthorized",
+    403: "Forbidden",
+    404: "Not Found",
+    409: "Conflict"
 };
 
 const HttpError = (status, message = messages[status]) => {
@@ -9,3 +13,5 @@ const HttpError = (status, message = messages[status]) => {
 };
 
 module.exports = HttpError;
+
+
