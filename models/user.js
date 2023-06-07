@@ -19,9 +19,16 @@ const userSchema = new Schema({
         enum: subscriptionList,
         default: "starter"
     },
+    avatarUrl: {
+        type: String,
+        required: true,
+    },
     token: String
 
-}, { versionKey: false, timestamps: true });
+}, {
+    versionKey: false,
+    timestamps: true
+});
 
 userSchema.post("save", handleMongooseError);
 
