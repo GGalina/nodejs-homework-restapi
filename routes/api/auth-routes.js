@@ -15,6 +15,6 @@ router.get('/current', authenticate, authControllers.getCurrent);
 
 router.patch('/', authenticate, validate.validateSubscription(schemas.updateSubscription), authControllers.subscription);
 
-router.patch('/avatar', authenticate, upload.single('avatar'), authControllers.updateAvatar)
+router.patch('/avatars', authenticate, upload.single('avatar'), authControllers.updateAvatar)
 
 module.exports = router;
