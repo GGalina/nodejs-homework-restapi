@@ -6,7 +6,10 @@ const createVarificationEmail = (verificationToken, email) => {
     return {
         to: email,
         subject: "Verification",
-        html: verifyLink,
+        html: `<p>Dear User,</p>
+            <p>Thank you for registering with our platform. To complete your account setup, please click on the following link to verify your email:</p>
+            <a href="${verifyLink}" target="_blank">${verifyLink}</a>
+            <p>Thank you</p>`
     }
 };
 
